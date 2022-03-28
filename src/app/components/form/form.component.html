@@ -1,0 +1,31 @@
+<h4>{{title}}</h4>
+<form [formGroup]="myForm" class="example-form">
+    <mat-form-field class="w-100 small-input mb-1" appearance="outline">
+        <mat-label>Nombre</mat-label>
+        <input matInput type="text" autocomplete="off" formControlName="title">
+        <mat-error>
+            Completa este campo.
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field class="w-100 small-input mb-1" appearance="outline">
+        <mat-label>Tipo de servicio</mat-label>
+        <mat-select formControlName="type_id">
+            <mat-option *ngFor="let t of types" [value]="t.id">{{t.name}}</mat-option>
+        </mat-select>
+        <mat-error>
+            Completa este campo.
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field class="w-100 small-input mb-1" appearance="outline">
+        <mat-label>Descripción</mat-label>
+        <textarea matInput formControlName="description"></textarea>
+        <mat-error>
+            Completa este campo.
+        </mat-error>
+    </mat-form-field>
+</form>
+<mat-divider></mat-divider>
+<div class="card__actions">
+    <button mat-raised-button (click)="save()">Guardar</button>
+    <button mat-button (click)="cancel()" class="ml-1">Cancelar</button>
+</div>

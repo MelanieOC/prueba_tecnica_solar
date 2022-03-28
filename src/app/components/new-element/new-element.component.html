@@ -1,0 +1,6 @@
+<div class="card" *ngIf="view==2">
+    <app-form [data]="newService" [edit]="false" (return)="view=1"></app-form>
+</div>
+<button mat-stroked-button class="w-100" *ngIf="view==1" (click)="view=2">
+    Agregar Servicio
+</button>

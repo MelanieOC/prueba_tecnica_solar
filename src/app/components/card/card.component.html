@@ -1,0 +1,12 @@
+<div class="card">
+    <ng-container *ngIf="!edit">
+        <h2>{{data.title}}</h2>
+        <p>{{data.description}}</p>
+        <mat-divider></mat-divider>
+        <div class="card__actions">
+            <button mat-button (click)="edit=true">Editar</button>
+            <button mat-button color="warn" class="ml-1" (click)="delete()">Eliminar</button>
+        </div>
+    </ng-container>
+    <app-form [data]="data" [edit]="true" (return)="edit=false" *ngIf="edit"></app-form>
+</div>
